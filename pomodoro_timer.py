@@ -144,8 +144,11 @@ def center_window(win_width=416, win_height=410):
 
 
 def collapse_window():
-    """Shrinks the window to display only the title bar."""
-    root.geometry("235x0")
+    """Shrinks the window to display only the title bar in the bottom right corner of the screen."""
+    x = root.winfo_screenwidth() - 245
+    y = root.winfo_screenheight() - 81
+    root.geometry(f"235x0+{int(x)}+{int(y)}")
+
 
 
 def restore_window():
